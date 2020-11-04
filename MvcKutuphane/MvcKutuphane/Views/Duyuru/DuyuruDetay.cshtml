@@ -1,0 +1,22 @@
+﻿@model MvcKutuphane.Models.Entity.TblDuyurular
+@{
+    ViewBag.Title = "DuyuruDetay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Duyuru Detay Sayfası</h2>
+
+@using (Html.BeginForm("DuyuruGuncelle", "Duyuru", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("Duyuru Kategori")
+    @Html.TextBoxFor(x => x.KATEGORI, new { @class = "form-control" })
+    <br />
+    @Html.Label("Duyuru İçeriği")
+    @Html.TextAreaFor(x => x.ICERIK, new { @class = "form-control" })
+    <br />
+    @Html.Label("Duyuru Tarihi")
+    @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Duyuru Güncelle</button>
+}

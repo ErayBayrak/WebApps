@@ -1,0 +1,36 @@
+﻿@model MvcKutuphane.Models.Entity.TblHareket
+
+@{
+    ViewBag.Title = "Odunciade";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("OduncGuncelle", "Odunc", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+    <label>Kitap Adı</label>
+    @Html.TextBoxFor(x => x.TblKitap.AD, new { @class = "form-control" })
+    <br />
+    <label>Üye Adı</label>
+    @Html.TextBoxFor(x => x.TblUyeler.AD, new { @class = "form-control" })
+    <br />
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(x => x.TblPersonel.PERSONEL, new { @class = "form-control" })
+    <br />
+    <label>Alış Tarihi</label>
+    @Html.TextBoxFor(x => x.ALISTARIH, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+    <br />
+    <label>İade Tarihi</label>
+    @Html.TextBoxFor(x => x.IADETARIH, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+    <br />
+    <label>Üyenin Getirdiği Tarih</label>
+    <input type="text" class="form-control" name="UYEGETIRTARIH" value="@DateTime.Now.ToShortDateString()"/>
+    <br />
+    <label>Geç Gelen Gün Sayısı</label>
+                         <input type="text" class="form-control" id="Gecinput" value="@ViewBag.dgr"/>
+                         <br/>
+    <button class="btn btn-primary">Ödünç Kitabı Geri Al</button>
+}
+
+
+

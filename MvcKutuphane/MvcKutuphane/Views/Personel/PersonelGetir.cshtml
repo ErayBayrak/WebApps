@@ -1,0 +1,15 @@
+﻿@model MvcKutuphane.Models.Entity.TblPersonel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ID)
+    @Html.LabelFor(x=>x.PERSONEL)
+    @Html.TextBoxFor(x=>x.PERSONEL,new{@class="form-control"})
+    <br/>
+    <button class="btn btn-primary">Personel Güncelle</button>
+}
+

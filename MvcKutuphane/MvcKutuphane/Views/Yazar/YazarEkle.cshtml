@@ -1,0 +1,23 @@
+﻿@model MvcKutuphane.Models.Entity.TblYazar
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazar Ekleme Sayfası</h2>
+
+@using (Html.BeginForm("YazarEkle", "Yazar", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.AD);
+    @Html.TextBoxFor(x => x.AD, new { @class = "form-control" });
+    @Html.ValidationMessageFor(x=>x.AD,"",new{@style="color:red;"})
+    <br />
+    @Html.LabelFor(x => x.SOYAD);
+    @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" });
+    @Html.ValidationMessageFor(x=>x.SOYAD,"",new{@style="color:red;"})
+    <br />
+    @Html.LabelFor(x => x.DETAY);
+    @Html.TextAreaFor(x => x.DETAY, new { @class = "form-control" });
+    <br />
+    <button class="btn btn-primary">Yeni Yazar Ekle</button>
+}

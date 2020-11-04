@@ -1,0 +1,21 @@
+﻿@model MvcKutuphane.Models.Entity.TblDuyurular
+@{
+    ViewBag.Title = "DuyuruEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Duyuru Ekleme Sayfası</h2>
+
+@using (Html.BeginForm("DuyuruEkle", "Duyuru", FormMethod.Post))
+{
+    @Html.Label("Duyuru Kategorisi")
+    @Html.TextBoxFor(x => x.KATEGORI, new { @class = "form-control" })
+    <br />
+    @Html.Label("Duyuru İçeriği")
+    @Html.TextBoxFor(x => x.ICERIK, new { @class = "form-control" })
+    <br />
+    @Html.Label("Duyuru Tarihi")
+    @Html.TextBoxFor(x => x.TARIH, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Duyuru Ekle</button>
+}
