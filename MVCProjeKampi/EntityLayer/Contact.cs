@@ -17,6 +17,7 @@ namespace EntityLayer
         public string UserMail { get; set; }
         [StringLength(100)]
         public string Subject { get; set; }
+        public DateTime ContactDate { get; set; }
         [StringLength(1000)]
         public string Message { get; set; }
     }

@@ -35,5 +35,15 @@ namespace DataAccessLayer.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Writer Get(Expression<Func<Writer, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Writer> ListOrderByDesc(Expression<Func<Writer, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

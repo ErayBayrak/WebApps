@@ -11,8 +11,10 @@ namespace DataAccessLayer.Abstract
     {
         List<T> List();
         void Insert(T p);
+        T Get(Expression<Func<T, bool>> filter);
         void Delete(T p);
         void Update(T p);
         List<T> List(Expression<Func<T, bool>> filter);
+        //List<T> ListOrderByDesc(Expression<Func<T, bool>> filter);
     }
 }

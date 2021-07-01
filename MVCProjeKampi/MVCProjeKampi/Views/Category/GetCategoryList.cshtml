@@ -1,0 +1,33 @@
+﻿@using EntityLayer
+@model List<Category>
+
+
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="container" style="margin-top: 25px;">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>AD</th>
+            <th>AÇIKLAMA</th>
+            <th>DURUM</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                <td>@item.CategoryDescription</td>
+                <td>@item.CategoryStatus</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <a href="/Category/AddCategory/" class="btn btn-primary">Ekle</a>
+</div>

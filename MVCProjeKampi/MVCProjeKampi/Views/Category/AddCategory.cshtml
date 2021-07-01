@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Category
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddCategory</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h3>Kategori Ekleme Sayfası</h3>
+    
+    @using (Html.BeginForm("AddCategory","Category",FormMethod.Post))
+    {
+        @Html.Label("Kategori Adı");
+        @Html.TextBoxFor(x=>x.CategoryName,new{@class="form-control"});
+        @Html.ValidationMessageFor(x=>x.CategoryName);
+        <br/>
+        @Html.Label("Kategori Açıklaması");
+        @Html.TextBoxFor(x=>x.CategoryDescription, new { @class = "form-control" });
+        @Html.ValidationMessageFor(x=>x.CategoryDescription);
+        <br/>
+        <button class="btn btn-primary" type="submit">Ekle</button>
+    }
+    
+    
+    
+
+    @*<form class="form-group" method="post">
+        <input type="text" name="CategoryName" placeholder="Kategori Adı" required="" class="form-control" />
+        <br/>
+        <input type="text" name="CategoryDescription" placeholder="Kategori Açıklaması" required="" class="form-control" />
+        <br/>
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>*@
+</div>
+</body>
+</html>
