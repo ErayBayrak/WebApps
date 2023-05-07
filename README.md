@@ -1,2 +1,2 @@
-# WebSite
- Asp .Net Mvc5 ile Yapılan Web Site Projeleri
+# Web Apps
+Web Applications made with Asp .Net MVC5
